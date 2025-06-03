@@ -1,0 +1,50 @@
+# Ignore Composer dependencies (if using outside Docker)
+vendor/
+composer.lock
+
+# Node modules (in case JS assets exist)
+node_modules/
+
+# Yii2 runtime and cache
+src/runtime/
+src/web/assets/
+
+# Environment and config files
+.env
+.env.*
+
+# Docker-related
+*.log
+docker/*.log
+docker-compose.override.yml
+
+# Ansible artifacts
+*.retry
+ansible/.vault_pass.txt
+ansible/inventory.ini  # optional, if you want to keep inventory local-only
+
+# IDE and OS junk
+*.swp
+*.swo
+*.bak
+*.tmp
+*.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# SSH key files (very important)
+*.pem
+*.key
+
+# GitHub actions temp files
+.github/*.log
+.github/workflows/*.secrets
+
+# Docker image tarballs or saved images
+*.tar
+
+# Ignore built images or containers (if ever stored locally)
+*.img
+*.qcow2
+

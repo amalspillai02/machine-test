@@ -1,0 +1,15 @@
+- name: Install required packages
+  apt:
+    name: ['docker.io', 'docker-compose', 'git', 'php-cli']
+    state: present
+    update_cache: yes
+
+- name: Enable and start Docker
+  systemd:
+    name: docker
+    enabled: yes
+    state: started
+
+- name: Initialize Docker Swarm
+  shell: docker swarm init || true
+
