@@ -33,6 +33,6 @@ jobs:
         username: ubuntu
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
-          docker service update --image ${{ secrets.DOCKER_USERNAME }}/yii2-app:latest yii2_app || \
-          docker service create --name yii2_app --publish 8080:80 ${{ secrets.DOCKER_USERNAME }}/yii2-app:latest
+          sudo docker service update --image ${{ secrets.DOCKER_USERNAME }}/yii2-app:latest yii2_app || \
+          sudo docker service create --name yii2_app --publish 8080:80 ${{ secrets.DOCKER_USERNAME }}/yii2-app:latest
 
