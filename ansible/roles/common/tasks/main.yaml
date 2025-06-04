@@ -13,3 +13,9 @@
 - name: Initialize Docker Swarm
   shell: docker swarm init || true
 
+- name: Add user to docker group
+  user:
+    name: "{{ ansible_user | default('ubuntu') }}"
+    groups: docker
+    append: yes
+
